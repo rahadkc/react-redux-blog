@@ -1,3 +1,4 @@
+# [Simple Blog App using React Redux] 
 This project was CREATED with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Interactive Blogging app using React, Redux, React RouterV4
