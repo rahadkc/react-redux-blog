@@ -1,0 +1,239 @@
+*{
+  box-sizing:border-box;
+}
+body{
+  background:#f9f7f6;
+}
+.pageTitle{
+  font-weight: 900;
+  padding: 20px 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 35px;
+}
+.App {
+  text-align: center;
+  padding-top:30px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.nav span{
+  display:inline-block;
+}
+.nav a{
+  display:block;
+  padding:10px;
+  border:1px solid #ccc;
+  color:#333;
+  text-decoration: none;
+}
+.videoRecord{
+  display:flex;
+}
+.record{
+  display:inline-block;
+  padding:10px;
+  border:1px solid #ccc;
+  cursor:pointer;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+ul{
+  padding:0;
+}
+.form-control{
+  width:100%;
+  height:50px;
+  margin-bottom:10px;
+  padding:10px 20px;
+}
+textarea.form-control{
+  height: 100px;
+  width:100%;
+}
+.blog-wrapper{
+  
+}
+.inputForm{
+  background:#fff;
+  padding:35px 20px;
+  border:1px solid #ddd;
+}
+
+.post-wrapper{
+  background: #ffffff;
+  margin: 30px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+article{
+  padding:10px;
+  /* background:#f2f2f2; */
+  border:1px solid #ccc;
+  margin:20px 0;
+  text-align: left;
+}
+article h2{
+  text-transform: capitalize;
+}
+.widget{
+  background:#fff;
+  border:1px solid #ccc;
+  margin-bottom: 15px;
+}
+.widget h3{
+  text-transform: uppercase;
+  font-size:20px;
+  font-weight:700;
+  background:#fff;
+  padding:15px;
+  margin:0;
+  border-bottom:1px solid #ccc;
+}
+.widget ul{
+  margin: 0;
+  padding:15px 10px;
+}
+.widget ul:empty{
+  padding:0;
+}
+.widget article{
+  background:#f2f2f2;
+  margin:0 0 20px;
+}
+.widget article:last-child{
+  margin-bottom: 0;
+}
+.widget article > img{
+  width:80px;
+  height:80px;
+  margin:5px 0;
+}
+.bookmarked{
+}
+.liked{
+}
+img{
+  max-width:100%;
+}
+.disabled{
+  pointer-events: none;
+}
+.noItem{
+  padding: 30px 20px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  font-size: 20px;
+}
+.locationBtn{
+  background:#34495e;
+  display:block;
+  padding:10px 15px;
+  color:#fff;
+  cursor:pointer;
+}
+.popupModal,
+.mapModal{
+  width:100%;
+  background:rgba(0,0,0,0.3);
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalContent{
+  width:400px;
+  height: 450px;
+  background:#fff; 
+  border-radius:8px;
+  text-align:center;
+}
+.mapBox{
+  width:400px;
+  height: 300px;
+  position:relative;
+}
+
+
+.tools{
+  display:flex;
+}
+input[type="submit"]{
+  background-color: #1abc9c;
+  color: #f1e5e6;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 0.5rem 1.25rem;
+  margin: 10px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border:none;
+  text-transform: capitalize;
+}
+/* //input file */
+.upload{
+  position:relative;
+}
+[type="file"] {
+  width:100%;
+  height: 50px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  left:0;
+  z-index: 0;
+}
+[type="file"] + label {
+  background-color: #2c3e50;
+  color: #f1e5e6;
+  cursor: pointer;
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 0.5rem 1.25rem;
+  margin:0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+[type="file"] + label svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+  margin-top: -0.25em;
+  margin-right: 0.25em;
+  vertical-align: middle;
+}
+[type="file"] + label:hover {
+  background-color: #16a085;
+}
+[type="file"]:focus + label {
+  background-color: #16a085;
+  outline: 1px dotted #000;
+}
