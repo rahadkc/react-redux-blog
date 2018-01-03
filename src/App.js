@@ -2,12 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {BrowserRouter as Router, Route, Link, NavLink, Switch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import * as addAction from './actions/PostActions';
 import uuid from 'uuid/v4';
 import Article from './component/Articles';
 import Audio from './component/Audio';
 import Map from './component/Map';
+import PageHeader from './component/PageHeader';
 import './App.css';
 
 
@@ -179,12 +180,7 @@ class App extends Component {
   render() {
     const { category, posts, bookmarkList, likedList } = this.props;
 
-    const filterPosts = this.filteredPosts({category, posts, bookmarkList, likedList})
- 
-
-    let newPosts = filterPosts.map((post, i) => {
-      return <Article post={post} key={i} like={this.likeHandle}  bookmark={this.bookmarkHandle}/>
-    })
+    const filterPosts = this.filteredPosts({category, posts, bookmarkList, likedList});
 
     let bookmarked = this.props.bookmarkList.map((post,i) => {
       return <Article post={post} key={i} like={this.likeHandle} bookmark={this.bookmarkHandle}/>
@@ -197,11 +193,7 @@ class App extends Component {
    
     return (
       <div className="App container">
-        <div className="row">
-          <div className="col-12">
-            <h1 className="pageTitle">My Blog</h1>
-          </div>
-        </div>
+        <PageHeader/>
         <div className="row">
           <div className="col-12 col-md-7 col-sm-8">
             <div className="blog-wrapper">
@@ -212,27 +204,28 @@ class App extends Component {
                 <div className="tools">
                     <div className="upload">
                       <input type="file" ref="file" onChange={this.handleImageChange}/>
-                      <label>
+                      <label className="btn btn-primary">
+                        <i className="fa fa-paperclip" aria-hidden="true"></i>
                         <span> Upload</span>
                       </label>
                     </div>
                     {/* upload file */}
-                    <div className="locationBtn" onClick={this.openMapModal}>Select location</div><br/>
+                    <div className="btn btn-info locationBtn" onClick={this.openMapModal}><i className="fa fa-map-marker" aria-hidden="true"></i> Select location</div>
                     {
                       this.state.isOpenModal && <Map openModal={this.openMapModal} locate={this.locationSelect} />
                     }
                     <Audio videoUrl={this.videoUrl}/>
                 </div>
                 
-                <input type="submit" value="submit" />
+                <input className="btn btn-dark" type="submit" value="submit" />
               </form>
 
               <div className="post-wrapper">
 
                   <div className="nav">
-                      <span><Link value="all"  to="/">All posts</Link></span>
-                      <span><Link value="liked"  to="/liked">Liked</Link></span>
-                      <span><Link value="bookmarked"  to="/bookmark">Bookmarked</Link></span>
+                      <span><Link className="btn btn-primary" value="all"  to="/">All posts</Link></span>
+                      <span><Link className="btn btn-primary" value="liked"  to="/liked">Liked</Link></span>
+                      <span><Link className="btn btn-primary" value="bookmarked"  to="/bookmark">Bookmarked</Link></span>
                   </div>
                   <div className="post">
                     { 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { captureUserMedia, S3Upload } from './AudioUtils';
+import { captureUserMedia } from './AudioUtils';
 import Webcam from './Webcam';
 import RecordRTC from 'recordrtc';
 
@@ -55,7 +55,9 @@ class RecordPage extends React.Component {
       recording: true
     })
     captureUserMedia((stream) => {
-      this.state.recordVideo = RecordRTC(stream, { type: 'video' });
+      this.setState({
+        recordVideo: RecordRTC(stream, { type: 'video' })
+      })
       this.state.recordVideo.startRecording();
     });
   }
@@ -102,7 +104,7 @@ class RecordPage extends React.Component {
         {this.state.openVideoModal && <div className="popupModal">
               <div className="modalContent">
                   
-                  <div><Webcam src={this.state.src} newSrc={this.state.newSrc} width="100%" height="300px"/></div>
+                  <div><Webcam src={this.state.src} newSrc={this.state.newSrc} width="100%" height="350px"/></div>
                   <div className="modal-footer">
                   <button type="button" className="btn btn-danger" onClick={this.openModalHandle}>Close</button>
                   <button type="button" className={'btn btn-primary ' + (this.state.recording && 'disabled')} onClick={this.startRecord}>{this.state.recording ? 'Recording..' : 'Record Video'}</button>
@@ -110,7 +112,7 @@ class RecordPage extends React.Component {
                   </div>
               </div>
           </div>}
-        <div><span className="record" onClick={this.openModalHandle}>Start Record</span></div>
+        <span className="btn btn-success record" onClick={this.openModalHandle}><i className="fa fa-video-camera" aria-hidden="true"></i> Record video</span>
       </div>
     )
   }

@@ -1,3 +1,4 @@
+# [Simple Blog App using React Redux] 
 This project was CREATED with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Interactive Blogging app using React, Redux, React RouterV4
@@ -10,12 +11,15 @@ Interactive Blogging app using React, Redux, React RouterV4
 1.0.0
 
 ### App includes:
- * React Router Redux
+ * Image post
+ * Audio post
+ * Audio/Video record and post
+ * Location select and post
  * React Router v4
- * Single page application 
- * Search movie form page 
- * Search form ThemovieDB API
- * Movie App
+ * Single post page
+ * Liked post
+ * Bookmark post
+ * Redux 
 
 
 

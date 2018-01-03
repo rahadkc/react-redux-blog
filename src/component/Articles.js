@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 import Location from './Location';
 
 class Article extends Component {
@@ -11,12 +11,12 @@ class Article extends Component {
     }
 
     render() {
-        const { post, latlng } = this.props;
+        const { post, singlePost } = this.props;
         return (
-            <article id={post.id}>
-                <h2>{post.title}</h2>
+            <article id={post.id} className={singlePost && "singlePost"}>
+                <h2>{!singlePost ? <Link to={`/post/${post.id}`}>{post.title}</Link> : post.title}</h2>
                 <div className="msg">{post.msg}</div>
-                {post.file && <img src={post.file} alt="Image" />}
+                {post.file && <img src={post.file} alt="" />}
                 {post.videoFile && <video muted src={post.videoFile} width="200" height="150" controls />}
                 {post.videoUrl && <video muted src={post.videoUrl} width="200" height="150" controls />}
                 {post.location && <Location location={post.location} id={post.id} />}

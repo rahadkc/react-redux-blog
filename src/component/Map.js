@@ -61,7 +61,7 @@ class Map extends Component {
     }
     
     render() {
-        const { location, id} = this.props;
+        // const { location, id} = this.props;
      
         return ( 
             <div className="mapModal">

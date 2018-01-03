@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { combineReducers } from 'redux';
 import posts from './PostReducer';
 

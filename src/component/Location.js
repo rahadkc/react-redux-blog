@@ -1,6 +1,5 @@
 /*global google*/
 import React, { Component } from 'react';
-import uuid from 'uuid/v4';
 
 class Location extends Component {
     componentDidMount() {
