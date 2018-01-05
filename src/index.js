@@ -12,16 +12,10 @@ ReactDOM.render(
     <Provider store={store} >
         <Router>
             <Switch>
-                {/* <Route exact path={`/`} component={App} />
+                <Route exact path={`/`} component={App} />
                 <Route path={`/post/:id`} component={SinglePost} />
                 <Route path={`/liked`} component={App} />
-                <Route path={`/bookmark`} component={App} /> */}
-
-                <Route exact path={`${process.env.PUBLIC_URL}/`} component={App} />
-                <Route path={`${process.env.PUBLIC_URL}/post/:id`} component={SinglePost} />
-                <Route path={`${process.env.PUBLIC_URL}/liked`} component={App} />
-                <Route path={`${process.env.PUBLIC_URL}/bookmark`} component={App} />
-                <Route component={NoMatch} />
+                <Route path={`/bookmark`} component={App} />
             </Switch>
         </Router>
     </Provider>, 
