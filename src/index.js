@@ -10,7 +10,7 @@ import store from './store';
 
 ReactDOM.render(
     <Provider store={store} >
-        <HashRouter>
+        <Router>
             <Switch>
                 {/* <Route exact path={`/`} component={App} />
                 <Route path={`/post/:id`} component={SinglePost} />
@@ -23,6 +23,6 @@ ReactDOM.render(
                 <Route path={`${process.env.PUBLIC_URL}/bookmark`} component={App} />
                 <Route component={NoMatch} />
             </Switch>
-        </HashRouter>
+        </Router>
     </Provider>, 
     document.getElementById('root'));

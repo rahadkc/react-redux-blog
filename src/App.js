@@ -202,7 +202,7 @@ class App extends Component {
           <div className="col-12 col-md-7 col-sm-8">
             <div className="blog-wrapper">
               <form  className="inputForm" onSubmit={this.onSubmit}>
-                <input className="form-control" ref="title" type="text" placeholder="Title here"/><br/>
+                <input className="form-control" ref="title" type="text" placeholder="Title here" required/><br/>
                 <textarea className="form-control" ref="msg" placeholder="Message here.."></textarea>
 
                 <div className="selectedFile">
