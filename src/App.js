@@ -34,8 +34,7 @@ class App extends Component {
     window.initMap = this.initMap;
     // Asynchronously load the Google Maps script, passing in the callback reference
     this.loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyAP1O3BWa3XxIxa1l64FhK9JLEanI-fnuM');
-    
-    console.log('listen', this.state.file);
+
     
   }
   unloadJs = (src) =>{

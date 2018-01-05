@@ -98,7 +98,6 @@ class RecordPage extends React.Component {
 
 
   render() {
-    console.log(this.state.recording, "recording")
     return(
       <div className="videoRecord">
         {this.state.openVideoModal && <div className="popupModal">
