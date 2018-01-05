@@ -8,8 +8,7 @@ Interactive Blogging app using React, Redux, React RouterV4
 
 ### Demo
 This project Demo [Demo](https://rahadkc.github.io/react-redux-blog/)
-## Note:
-For demo -- If you reload Router link content will be diappear since server isn't running in github.Thanks 
+
 
 ### Version
 1.0.0
