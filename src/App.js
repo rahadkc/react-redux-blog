@@ -7,6 +7,7 @@ import * as addAction from './actions/PostActions';
 import uuid from 'uuid/v4';
 import Article from './component/Articles';
 import Audio from './component/Audio';
+import Webcam from './component/Webcam';
 import Map from './component/Map';
 import PageHeader from './component/PageHeader';
 import './App.css';
@@ -18,6 +19,8 @@ class App extends Component {
     this.state = {
       cat: '',
       url: '',
+      file:null,
+      videoFile:null,
       UploadVideoUrl: '',
       videoUrl: null,
       isOpenModal: false,
@@ -31,6 +34,9 @@ class App extends Component {
     window.initMap = this.initMap;
     // Asynchronously load the Google Maps script, passing in the callback reference
     this.loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyAP1O3BWa3XxIxa1l64FhK9JLEanI-fnuM');
+    
+    console.log('listen', this.state.file);
+    
   }
   unloadJs = (src) =>{
       var ref = window.document.getElementsByTagName("script")[9];
@@ -60,7 +66,6 @@ class App extends Component {
           this.setState({
             UploadVideoUrl: url
           })
-          console.log(this.state.UploadVideoUrl ,"UploadVideoUrl")
         }
         else{
           this.setState({
@@ -200,6 +205,12 @@ class App extends Component {
               <form  className="inputForm" onSubmit={this.onSubmit}>
                 <input className="form-control" ref="title" type="text" placeholder="Title here"/><br/>
                 <textarea className="form-control" ref="msg" placeholder="Message here.."></textarea>
+
+                <div className="selectedFile">
+                  {this.state.url && <div className="item"><img src={this.state.url} width="80" height="80"/><div>Image</div></div>}
+                  {this.state.UploadVideoUrl && <div className="item"><Webcam src={this.state.UploadVideoUrl}  width="100px" height="100px"/><div>Video</div></div>}
+                  {this.state.videoUrl && <div className="item"><Webcam src={this.state.videoUrl}  width="100px" height="100px"/><div>Record Video</div></div>}
+                </div>
                 
                 <div className="tools">
                     <div className="upload">
@@ -217,7 +228,7 @@ class App extends Component {
                     <Audio videoUrl={this.videoUrl}/>
                 </div>
                 
-                <input className="btn btn-dark" type="submit" value="submit" />
+                <input className="btn btn-dark btn-lg" type="submit" value="submit" />
               </form>
 
               <div className="post-wrapper">
@@ -241,13 +252,13 @@ class App extends Component {
           {/* col-12 */}
           <div className="col-6 col-md-5 col-sm-4">
             <div className="widget bookmarked">
-              <h3>bookmarked</h3>
+              <h3>bookmark post</h3>
               <ul>
                 {bookmarked}
               </ul>
             </div>
             <div className="widget liked">
-              <h3>Liked</h3>
+              <h3>Like post</h3>
               <ul>
                 {liked}
               </ul>

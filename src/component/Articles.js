@@ -22,8 +22,8 @@ class Article extends Component {
                 {post.location && <Location location={post.location} id={post.id} />}
                 <div>Posted on {post.date} - {post.time}</div>
                 <div>
-                    <button onClick={this.bookmark}>{post.bookmarked ? "Bookmarked" : "Add to Bookmark"}</button>
-                    <button onClick={this.like}>{post.likes} Like </button>
+                    <button className="btn btn-info" onClick={this.bookmark}>{post.bookmarked ? "Bookmarked" : "Add to Bookmark"}</button>&nbsp;
+                    <button className="btn btn-info" onClick={this.like}>{post.likes} Like </button>
                 </div>
             </article>
         )

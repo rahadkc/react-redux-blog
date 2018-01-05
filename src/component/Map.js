@@ -66,16 +66,16 @@ class Map extends Component {
         return ( 
             <div className="mapModal">
                 <div className="modalContent">
-                    <div><button onClick={this.openModal}>close</button></div>
-                    <div>
-                        <input type="text" ref="location"/>
-                    </div>
+                    <div><button className="btn btn-danger" onClick={this.openModal}>close</button></div>
+                    {/* {<div>
+                        <input className="form-control" type="text" ref="location"/>
+                    </div>} */}
                     <div className="mapBox" id="mapBox" ref="map">
 
                     </div>
                     <div id="latLng">Lat:{this.state.lat} <br/> Lng:{this.state.lng}</div>
                     <div>
-                        <div onClick={this.onEnter}>Send</div>
+                        <button className="btn btn-success" onClick={this.onEnter}>Send</button>
                     </div>
                 </div>
             </div>

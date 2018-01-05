@@ -2,12 +2,13 @@
   box-sizing:border-box;
 }
 body{
-  background:#f9f7f6;
+  background:#48475f;
 }
 .pageTitle{
   font-weight: 900;
   padding: 20px 0;
-  background: #fff;
+  color: #fff;
+  background:#8172c5;
   border: 1px solid #ccc;
   margin-bottom: 35px;
 }
@@ -50,6 +51,15 @@ body{
   padding:10px;
   border:1px solid #ccc;
   cursor:pointer;
+}
+.selectedFile{
+  margin:10px 0;
+}
+.selectedFile .item{
+  background:rgb(221, 223, 224);
+  padding:5px 10px;
+  border:1px solid skyblue;
+  text-align:left;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -103,8 +113,8 @@ article h2{
   margin-bottom: 15px;
 }
 .widget h3{
-  text-transform: uppercase;
-  font-size:20px;
+  text-transform: capitalize;
+  font-size:24px;
   font-weight:700;
   background:#fff;
   padding:15px;

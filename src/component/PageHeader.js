@@ -5,7 +5,7 @@ const PageHeader = () => {
     return(
         <div className="row">
             <div className="col-12">
-            <h1 className="pageTitle">My Blog</h1>
+            <h1 className="pageTitle">My Social Blog</h1>
             </div>
         </div>
     )
